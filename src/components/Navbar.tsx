@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import eloisalogo from "@/assets/eloisa-logo.png";
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,7 +55,7 @@ const Navbar = () => {
             className="flex items-center space-x-2 group"
           >
             <img
-                src="/src/assets/eloisa-logo.PNG"
+                src={eloisalogo}
                 alt="Logo Eloísa Marchezin"
                 className="w-8 h-8 rounded-full group-hover:scale-110 transition-transform duration-300"
             />

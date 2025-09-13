@@ -1,4 +1,5 @@
 import harewareLogo from "@/assets/hareware-logo.png";
+import eloisalogo from "@/assets/eloisa-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +12,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-                  src="/src/assets/eloisa-logo.PNG"
+                  src={eloisalogo}
                   alt="Logo Eloísa"
                   className="w-8 h-8 rounded-full"
               />
