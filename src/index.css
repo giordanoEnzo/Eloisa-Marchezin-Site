@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Eloísa Therapist Brand Colors */
+    --background: 154 38% 16%; /* #1a3328 - Deep forest green */
+    --foreground: 8 69% 92%; /* #f9d8d6 - Soft rose text */
+
+    --card: 154 40% 18%; /* Slightly lighter than background */
+    --card-foreground: 8 69% 92%;
+
+    --popover: 154 40% 18%;
+    --popover-foreground: 8 69% 92%;
+
+    --primary: 164 78% 69%; /* #73ebd0 - Healing aqua */
+    --primary-foreground: 154 38% 16%;
+
+    --secondary: 154 30% 25%; /* Muted forest green */
+    --secondary-foreground: 8 69% 92%;
+
+    --muted: 154 25% 20%;
+    --muted-foreground: 8 45% 75%;
+
+    --accent: 164 78% 69%; /* Same as primary for consistency */
+    --accent-foreground: 154 38% 16%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 8 69% 92%;
+
+    --border: 154 25% 30%;
+    --input: 154 25% 20%;
+    --ring: 164 78% 69%;
+
+    /* Custom healing gradients */
+    --gradient-healing: linear-gradient(135deg, hsl(154 38% 16%), hsl(154 30% 20%));
+    --gradient-aura: linear-gradient(135deg, hsl(164 78% 69%), hsl(164 65% 75%));
+    --gradient-gentle: linear-gradient(180deg, hsl(154 38% 16%), hsl(154 35% 18%));
+    
+    /* Elegant shadows */
+    --shadow-healing: 0 10px 30px -10px hsl(164 78% 69% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(154 38% 16% / 0.3);
+    
+    /* Smooth transitions */
+    --transition-gentle: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Keep same colors for dark mode - this brand is consistent */
+    --background: 154 38% 16%;
+    --foreground: 8 69% 92%;
+    --card: 154 40% 18%;
+    --card-foreground: 8 69% 92%;
+    --popover: 154 40% 18%;
+    --popover-foreground: 8 69% 92%;
+    --primary: 164 78% 69%;
+    --primary-foreground: 154 38% 16%;
+    --secondary: 154 30% 25%;
+    --secondary-foreground: 8 69% 92%;
+    --muted: 154 25% 20%;
+    --muted-foreground: 8 45% 75%;
+    --accent: 164 78% 69%;
+    --accent-foreground: 154 38% 16%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 8 69% 92%;
+    --border: 154 25% 30%;
+    --input: 154 25% 20%;
+    --ring: 164 78% 69%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif;
+    background: var(--gradient-healing);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+  }
+
+  .healing-card {
+    @apply bg-card border border-border rounded-xl p-6;
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-gentle);
+  }
+
+  .healing-card:hover {
+    box-shadow: var(--shadow-healing);
+    transform: translateY(-2px);
+  }
+
+  .aura-button {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium;
+    background: var(--gradient-aura);
+    transition: var(--transition-gentle);
+    box-shadow: var(--shadow-healing);
+  }
+
+  .aura-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 35px -8px hsl(164 78% 69% / 0.4);
+  }
+
+  .section-gradient {
+    background: var(--gradient-gentle);
+  }
+}
